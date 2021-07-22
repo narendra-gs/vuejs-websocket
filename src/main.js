@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import store from './store'
-import VueNativeSock from 'vue-native-websocket'
+//import VueNativeSock from 'vue-native-websocket'
 import vuetify from './plugins/vuetify'
 import axios from 'axios'
 
@@ -19,7 +19,7 @@ if (window.location.origin.includes("localhost")) {
 
 //Vue.use(VueNativeSock, 'ws://localhost:9090');
 //Vue.use(VueNativeSock, 'wss://echo.websocket.org', { format: 'json' });
-Vue.use(VueNativeSock, 'ws://localhost:8900/v-unite/system/channel/conversation/list', { store: store, format: 'json' });
+//Vue.use(VueNativeSock, 'ws://localhost:8900/v-unite/system/channel/conversation/list', { store: store, format: 'json' });
 
 Vue.config.productionTip = false
 
@@ -29,7 +29,8 @@ import socket from './components/socket'
 const router = new VueRouter({
 	routes: [
     { path: '/login', component: login, props: true },
-    { path: '/', component: socket, props: true }
+    { path: '/', component: socket, props: true },
+    { path: '/:tenantSlug/:experienceSlug/room/:structureSlug', component: socket, props: true }
   ]
 });
 
