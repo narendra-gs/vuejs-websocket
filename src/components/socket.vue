@@ -76,8 +76,8 @@ export default {
       var date = new Date(this.appointmentForm.date + "T" + this.appointmentForm.hours + ":" + this.appointmentForm.minutes + ":00");
       axios
         .post("/system/public/aesthetic/record/add", {
-          firstname: this.appointmentForm.firstName,
-          lastname: this.appointmentForm.lastName,
+          firstName: this.appointmentForm.firstName,
+          lastName: this.appointmentForm.lastName,
           email: this.appointmentForm.email,
           structureId: 295015,
           appointmentDate: date.toISOString()
