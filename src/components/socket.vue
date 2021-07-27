@@ -58,7 +58,7 @@ export default {
   mounted: function () {
     console.log(this.$route.query);
     if (this.$route.query.vuniteToken != null) {
-      Vue.use(VueNativeSock, "ws://localhost:8900/v-unite/system/public/channel/aesthetic/record?vuniteToken=" + this.$route.query.vuniteToken, { store: this.$store, format: "json" });
+      Vue.use(VueNativeSock, "ws://localhost:8900/v-unite/system/public/channel/notification?vuniteToken=" + this.$route.query.vuniteToken, { store: this.$store, format: "json" });
     }
 
     // if (!this.$store.state.principal.id) {
